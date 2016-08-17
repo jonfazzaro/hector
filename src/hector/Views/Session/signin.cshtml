@@ -1,0 +1,59 @@
+﻿@model hector.Web.Models.SignInViewModel
+@using hector
+
+<div class="row">
+
+    <div class="col-sm-6">
+        @using (Html.BeginForm()) {
+            if (Model.HasError) {
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <p class="alert alert-danger">
+                            @Html.Raw(@Model.ErrorMessage)
+                        </p>
+                    </div>
+                </div>
+            }
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    @Html.LabelFor(m => m.Url, new { @class = "label-control" })
+                    @Html.TextBoxFor(m => m.Url, new { @class = "form-control", type = "url", placeholder = Resources.ProjectCollectionUrlPrompt, title = Resources.ProjectCollectionUrlPrompt })
+                    @Html.ValidationMessageFor(m => m.Url, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+
+                    @Html.LabelFor(m => m.Username, new { @class = "label-control" })
+                    @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Username, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    @Html.LabelFor(m => m.Password, new { @class = "label-control" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-6">
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "label-control" })<br />
+                    @Html.CheckBoxFor(m => m.RememberMe, new {
+               data_toggle = "toggle",
+               data_onstyle = "info",
+               data_size = "mini",
+               data_on = "Yes",
+               data_off = "No"
+           })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-lg btn-success">@Html.Raw(@Resources.SignInButtonCaption)</button>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
