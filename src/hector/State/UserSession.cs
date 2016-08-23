@@ -1,4 +1,4 @@
-﻿namespace hector.State {
+﻿namespace Hector.State {
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 

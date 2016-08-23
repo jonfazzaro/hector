@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "exports": {
+    "Hector.TeamFoundation/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/Hector.TeamFoundation.dll": {}
+      },
+      "runtime": {
+        "../../packages/Microsoft.AspNet.WebApi.Client.5.2.3/lib/net45/System.Net.Http.Formatting.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.Build2.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.Chat.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.Core.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.Policy.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.SourceControl.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.Test.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.TestManagement.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.Work.WebApi.dll": {},
+        "../packages/Microsoft.TeamFoundationServer.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.WorkItemTracking.WebApi.dll": {},
+        "../packages/Microsoft.VisualStudio.Services.Client.14.102.0/lib/net45/Microsoft.TeamFoundation.Common.dll": {},
+        "../packages/Microsoft.VisualStudio.Services.Client.14.102.0/lib/net45/Microsoft.VisualStudio.Services.Common.dll": {},
+        "../packages/Microsoft.VisualStudio.Services.Client.14.102.0/lib/net45/Microsoft.VisualStudio.Services.WebApi.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/Hector.TeamFoundation.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Hector.TeamFoundation.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Hector/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/Hector.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Hector.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Hector.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
