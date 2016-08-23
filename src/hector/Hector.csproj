@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\SignInViewModel.cs" />
+    <Compile Include="Presentation\IViewModel.cs" />
     <Compile Include="Stories\IStoryFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="State\ISessionProvider.cs" />

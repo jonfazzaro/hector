@@ -4,6 +4,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Hector.Stories;
     using Hector.State;
+    using System.Net;
 
     public class ProjectController : Controller {
         readonly IStoryFinder _finder;
@@ -15,17 +16,17 @@
         }
 
         [Route("project/{name}")]
-        public async Task<IActionResult> Index(string name, int monthsFromNow = 6, int monthsAgo = 6) {
+        public async Task<IActionResult> Index(string name, DateTime? from = null, DateTime? to = null) {
             if (_provider.Session == null)
                 return RedirectToAction("Signin", "Session");
 
             ViewBag.IsAuthenticated = true;
-            if (string.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(WebUtility.UrlDecode(name)))
                 return View();
 
-            var stories = await _finder.FindStories(name);
-            ViewBag.FromDate = DateTime.Today.AddMonths(-monthsAgo);
-            ViewBag.ToDate = DateTime.Today.AddMonths(monthsFromNow);
+            var stories = await _finder.FindStories(WebUtility.UrlDecode(name));
+            ViewBag.FromDate = from ?? DateTime.Today.AddMonths(-6);
+            ViewBag.ToDate = to ?? DateTime.Today.AddMonths(6);
             return View(stories);
         }
 

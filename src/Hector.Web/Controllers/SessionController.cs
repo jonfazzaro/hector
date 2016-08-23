@@ -1,8 +1,9 @@
 ﻿namespace Hector.Web.Controllers {
     using System;
     using Microsoft.AspNetCore.Mvc;
-    using Hector.Web.Models;
     using Hector.State;
+    using Presentation;
+    using Authentication;
 
     public class SessionController : Controller {
         readonly ISessionProvider _provider;

@@ -1,4 +1,5 @@
-﻿namespace Hector.Web.Models {
+﻿namespace Hector.Authentication {
+    using Presentation;
     using System.Collections.Generic;
     using System.ComponentModel;
 
