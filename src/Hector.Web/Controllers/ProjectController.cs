@@ -15,19 +15,25 @@
             _provider = provider;
         }
 
-        [Route("project/{name}")]
-        public async Task<IActionResult> Index(string name, DateTime? from = null, DateTime? to = null) {
+        [Route("project/{projectName}/{areaName}")]
+        public async Task<IActionResult> Index(string projectName, string areaName = null, DateTime? from = null, DateTime? to = null) {
             if (_provider.Session == null)
                 return RedirectToAction("Signin", "Session");
 
             ViewBag.IsAuthenticated = true;
-            if (string.IsNullOrWhiteSpace(WebUtility.UrlDecode(name)))
+            if (string.IsNullOrWhiteSpace(WebUtility.UrlDecode(projectName)))
                 return View();
 
-            var stories = await _finder.FindStories(WebUtility.UrlDecode(name));
+            var stories = await FindStories(projectName, areaName);
             ViewBag.FromDate = from ?? DateTime.Today.AddMonths(-6);
             ViewBag.ToDate = to ?? DateTime.Today.AddMonths(6);
             return View(stories);
+        }
+
+        private async Task<System.Collections.Generic.IEnumerable<Story>> FindStories(string name, string area) {
+            return await _finder.FindStories(
+                WebUtility.UrlDecode(name), 
+                WebUtility.UrlDecode(area));
         }
 
         private IActionResult Error() {

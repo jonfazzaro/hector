@@ -3,6 +3,6 @@
     using System.Threading.Tasks;
 
     public interface IStoryFinder {
-        Task<IEnumerable<Story>> FindStories(string projectName);
+        Task<IEnumerable<Story>> FindStories(string projectName, string areaName = null);
     }
 }
