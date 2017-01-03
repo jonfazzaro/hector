@@ -6,13 +6,15 @@
 
     function velocity() {
         var points = data.map(toPoints);
-        sI = slopeAndIntercept(points.filter(function (p, i) { return p[1]; }));
+        var pointsWithCloseDates = points.filter(function (p, i) { return p[1] != null; });
+        sI = slopeAndIntercept(pointsWithCloseDates);
         return sI.slope;
     }
 
     function line() {
         var points = data.map(toPoints);
-        sI = slopeAndIntercept(points.filter(function (p, i) { return p[1]; }));
+        var pointsWithCloseDates = points.filter(function (p, i) { return p[1] != null; });
+        sI = slopeAndIntercept(pointsWithCloseDates);
         if (!sI)
             return [];
 

@@ -15,6 +15,7 @@
             _provider = provider;
         }
 
+        [Route("project/{projectName}")]
         [Route("project/{projectName}/{areaName}")]
         public async Task<IActionResult> Index(string projectName, string areaName = null, DateTime? from = null, DateTime? to = null) {
             if (_provider.Session == null)
